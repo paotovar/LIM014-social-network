@@ -1,19 +1,14 @@
-// import Accessories from './ accessories.js';
-import signUp from './SignUp.js';
-import signIn from './SignIn.js';
+import register from './register.js';
 import home from './home.js';
+import differ from './404.js';
+import wall from './wall.js';
+import profile from './profile.js';
 
-// import Places from './places.js';
-// import Different from './404.js';
+export const components = {
+  regis: register,
+  hom: home,
+  different: differ,
+  wal: wall,
+  profi: profile,
 
-const components = {
-//   accesorios: Accessories,
-  home,
-  SignUp: signUp,
-  SignIn: signIn,
-  // SignIn: login,
-//   lugares: Places,
-//   different: Different,
 };
-
-export { components };
