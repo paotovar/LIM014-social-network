@@ -33,8 +33,3 @@ const changeView = (hash) => {
   }
 };
 export { changeView };
-
-// comen wall
-// la idea es que aqui se muestre el header //
-// const cab = document.querySelector('header');
-// cab.classList.add('show');
