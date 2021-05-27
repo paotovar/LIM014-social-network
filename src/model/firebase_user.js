@@ -1,4 +1,4 @@
-// actualizar datos del usuario logueado por gmail 
+// actualizar datos del usuario logueado por gmail
 export const updateUser = (idDoc, newUserName, newUserPhoto, newInfoUser) => firebase.firestore().collection('users').doc(idDoc).update({
   displayName: newUserName,
   infoUser: newInfoUser,

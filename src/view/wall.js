@@ -36,7 +36,7 @@ export default (profile) => {
           <div class="post-buttoms">
             <label class ="btn btn-file">
               <input class='allInputs' type="file" name="" id="get-file" hidden>
-              <img class="circulo-img bgcolor" src="img/image.png" alt="Insertar imagen">
+              <img class="circulo-img bgcolor" src="img/image.svg" alt="Insertar imagen">
             </label>
             <button class="bgcolor" id="post-btn-publish">PUBLICAR</button>
           </div>
@@ -49,7 +49,7 @@ export default (profile) => {
   divElemt.classList.add('view-wall');
   divElemt.innerHTML = viewWall;
 
-  // Pinta todos los posts y segun el state de la privacidad, los hace visible o no //
+  // Muestra todos los posts y segun el state de la privacidad, los hace visible o no //
   const postSection = divElemt.querySelector('#post-published');
   // revisar y simplificar la función.
   // DOM para agregar Info del usuario //
@@ -115,6 +115,7 @@ export default (profile) => {
         createPost(user.uid, contentText, privacy, '');
       } else {
         uploadImage(date, imgPost)
+          // eslint-disable-next-line no-console
           .then((url) => console.log(url) || createPost(user.uid, contentText, privacy, url));
         file.value = '';
       }

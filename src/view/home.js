@@ -10,7 +10,7 @@ export default () => {
   <img class="logo" src="img/logo.png">
   <p id='texto'>¿Tu pasión es viajar?  
   Comparte tus mejores momentos o los lugares a los cuales haz viajado,en esta comunidad compartimos los mejores momentos</p>
-  <img id="dance" src="img/travel.png">
+  <img id="travel" src="img/travel.png">
   <p class='subtitle'>INICIA SESIÓN</p>
   <div><i class="far fa-user"></i><input class='allInputs 'id ="email" type="text" placeholder="Correo electronico"></div>
   <div><i class="fas fa-lock"></i><input class='allInputs 'id ="pass" type="password" placeholder="Contraseña"></div>
