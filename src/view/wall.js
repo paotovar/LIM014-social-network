@@ -32,7 +32,7 @@ export default (profile) => {
           <option value="public">🌎 Público</option>
           <option value="privacity">🔒 Privado</option>
           </select>
-          <textarea id="post-new-text" cols="" rows="3" placeholder="¿Qué compartiras hoy?"></textarea>
+          <textarea id="post-new-text" cols="" rows="3" placeholder="¿Qué momento compartiras hoy?"></textarea>
           <div class="post-buttoms">
             <label class ="btn btn-file">
               <input class='allInputs' type="file" name="" id="get-file" hidden>
@@ -49,7 +49,7 @@ export default (profile) => {
   divElemt.classList.add('view-wall');
   divElemt.innerHTML = viewWall;
 
-  // Muestra todos los posts y segun el state de la privacidad, los hace visible o no //
+  // Pinta todos los posts y segun el state de la privacidad, los hace visible o no //
   const postSection = divElemt.querySelector('#post-published');
   // revisar y simplificar la función.
   // DOM para agregar Info del usuario //
@@ -82,12 +82,17 @@ export default (profile) => {
     });
   }
   getPosts((objArray) => {
+    console.log('getPost', objArray);
     postSection.innerHTML = '';
     objArray.forEach((element) => {
+      console.log('Profile', profile);
       if (profile === true) {
+        console.log('profile');
         if (element.userId === user.uid) {
+          console.log('element.userId', element, user);
           getUser(element.userId)
             .then((doc) => {
+              console.log('Promesa', doc);
               postSection.appendChild(allPost(element, doc.data()));
             });
         }
@@ -115,7 +120,6 @@ export default (profile) => {
         createPost(user.uid, contentText, privacy, '');
       } else {
         uploadImage(date, imgPost)
-          // eslint-disable-next-line no-console
           .then((url) => console.log(url) || createPost(user.uid, contentText, privacy, url));
         file.value = '';
       }

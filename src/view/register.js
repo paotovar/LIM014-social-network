@@ -25,7 +25,7 @@ const registerUser = (userEmail, userPass, userNames) => {
         // Error occurred. Inspect error.code.
         });
       // guardar nombre del usuario en coleccion users
-      createUser(result.user.uid, userNames, './img/avatar-perfil.jpg', 'Pasion por viajar');
+      createUser(result.user.uid, userNames, './img/avatar-perfil.jpg', 'Apasionados por viajar');
       window.location.hash = '';
     })
     .catch(() => {
@@ -43,15 +43,15 @@ const registerUser = (userEmail, userPass, userNames) => {
 export default () => {
   const viewRegister = `
   <img class="logo" src="img/logo.png">
-  <p id='texto'>¿Qué esperas para unirte? Somos la comunidad de mochileros más grande de internet. Aprende y comparte las experiencias de tus mejores viajes.</p>
-  <img id="dance" src="img/travel.png">
+  <p id='texto'>¿Qué esperas para unirte? Somos comunidad más grande que disfruta viajar. Aprende, comparte y disfruta en MOCHILEROS.</p>
+  <img id="travel" src="img/travel.jpg">
   <p class='subtitle'>CREA TU CUENTA</p>
   <div><i class="far fa-user"></i><input class='allInputs' type="text" id ="names" placeholder ="Nombres y Apellidos"></div>
   <div><i class="fas fa-at"></i><input class='allInputs' type="text" id = "email" placeholder="Correo electronico"></div>
   <div><i class="fas fa-lock"></i><input class='allInputs' type="password" id = "pass" placeholder="Contraseña"></div>
   <button type="button" id="btn-register" class='principal-button'>REGISTRATE</button>
   <span id="messages" class="messages"></span>
-  <p class='lil-text'>¿Ya tienes una cuenta?</p><a id='just-link'href="">Inicia Sesión</a>
+  <p class='lil-text'>¿Ya tienes una cuenta?</p><a id='just-link'href="">INICIA SESION</a>
   </div>
 `;
   const divElemt = document.createElement('div');

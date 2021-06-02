@@ -72,48 +72,48 @@ export const allPost = (data, autor) => {
   const photoUser = autor.photoURL;
   const imgPost = data.img;
   viewpostpublish.innerHTML = `
-       <div>
-          <div id="user-data">
-            <img class="circulo-min" src="${photoUser}" alt="">
-            <div id='infoUserPost'>
-              <div id='infoAlign'>
-                <h4>${nameUser}</h4>
-                <div id='miniButtons'>
-                    <img id="btn-edit-post-${data.id}" class="hide circulo-imgbut bgcolor" src="img/edit.svg" alt="Editar Post">
-                    <img id="btn-save-post-${data.id}" class="hide circulo-imgbut bgcolor" src="img/save.svg" alt="Guardar cambios">
-                    <img id="btn-cancel-post-${data.id}" class="hide circulo-imgbut bgcolor" src="img/x.svg" alt="Cancelar cambios">
-                    <a class="hide" id='btn-delete-${data.id}'><img class="mini-img bgcolor" src="img/trash.png" alt="Eliminar imagen"></a>
-                </div>
+     <div>
+        <div id="user-data">
+          <img class="circulo-min" src="${photoUser}" alt="">
+          <div id='infoUserPost'>
+            <div id='infoAlign'>
+              <h4>${nameUser}</h4>
+              <div id='miniButtons'>
+                  <img id="btn-edit-post-${data.id}" class="hide circulo-imgbut bgcolor" src="img/edit.svg" alt="Editar Post">
+                  <img id="btn-save-post-${data.id}" class="hide circulo-imgbut bgcolor" src="img/save.svg" alt="Guardar cambios">
+                  <img id="btn-cancel-post-${data.id}" class="hide circulo-imgbut bgcolor" src="img/x.svg" alt="Cancelar cambios">
+                  <a class="hide" id='btn-delete-${data.id}'><img class="mini-img bgcolor" src="img/trash.png" alt="Eliminar imagen"></a>
               </div>
-                <div class='post-date'> 
-                  <p>${showDate(data.date)}</p>
-                  <select class='select-edited' id="selec-privacy-${data.id}" disabled="true">
-                    </select>
-                </div>
             </div>
+              <div class='post-date'> 
+                <p>${showDate(data.date)}</p>
+                <select class='select-edited' id="selec-privacy-${data.id}" disabled="true">
+                  </select>
+              </div>
           </div>
         </div>
       </div>
-    </header>
-    <textarea id="textarea-${data.id}" class="only-lines" disabled="true">${data.content}</textarea>
-    <div class="get-file-upload" type="file" accept="image/*">
-      ${(data.img !== undefined) ? `<img class="image-post" src="${imgPost}" alt=""/>` : `<img class="hide image-post" src="${imgPost}" alt=""/>`}
     </div>
-    <div class="btns-likes-comments">
-      <img id ="btnLike-${data.id}" class="mini-img" src="img/like.svg" alt="likes" title="likes"/>
-      <p class="counter-text">${data.likes.length}</p><p class="counter-text">Likes</p>
-      <img id="btn-show-comm" class="i-send" src="img/message-square.svg" alt="Mostrar Comentarios">
-      <span> Comentarios </span>
+  </header>
+  <textarea id="textarea-${data.id}" class="only-lines" disabled="true">${data.content}</textarea>
+  <div class="get-file-upload" type="file" accept="image/*">
+    ${(data.img !== undefined) ? `<img class="image-post" src="${imgPost}" alt=""/>` : `<img class="hide image-post" src="${imgPost}" alt=""/>`}
+  </div>
+  <div class="btns-likes-comments">
+    <img id ="btnLike-${data.id}" class="mini-img" src="img/like.svg" alt="likes" title="likes"/>
+    <p class="counter-text">${data.likes.length}</p><p class="counter-text">Likes</p>
+    <img id="btn-show-comm" class="i-send" src="img/message-square.svg" alt="Mostrar Comentarios">
+    <span> Comentarios </span>
+  </div>
+  <section class="comments hide">
+    <div class="new-comment">
+      <img class="circulo-min" src="${userActual.photoURL ? userActual.photoURL : 'img/avatar-perfil.jpg'}" alt="">
+      <input type="text" class="bg" id="txtNewComm-${data.id}" placeholder="Escriba un comentario">
+      <img id="btn-save-comm-${data.id}" class="i-send" src="img/send.svg" alt="Grabar Comentario">
     </div>
-    <section class="comments hide">
-      <div class="new-comment">
-        <img class="circulo-min" src="${userActual.photoURL}" alt="">
-        <input type="text" class="bg" id="txtNewComm-${data.id}" placeholder="Escriba un comentario">
-        <img id="btn-save-comm-${data.id}" class="i-send" src="img/send.svg" alt="Grabar Comentario">
-      </div>
-      <section class="old-comments"></section>
-    </section>
-    `;
+    <section class="old-comments"></section>
+  </section>
+  `;
   // post: cargar valor de privacidad en select
   const selectPriv = viewpostpublish.querySelector(`#selec-privacy-${data.id}`);
   const optionpublic = document.createElement('option');
@@ -173,7 +173,8 @@ export const allPost = (data, autor) => {
   btnSaveComment.addEventListener('click', () => {
     const NewComm = viewpostpublish.querySelector(`#txtNewComm-${data.id}`).value;
     if (NewComm) {
-      addComment(NewComm, userActual.displayName, userActual.photoURL, data.id);
+      addComment(NewComm, userActual.displayName, userActual.photoURL, data.id)
+        .then((res) => console.log(res));
     }
     viewpostpublish.querySelector(`#txtNewComm-${data.id}`).value = '';
     viewpostpublish.querySelector(`#txtNewComm-${data.id}`).focus();
@@ -190,30 +191,32 @@ export const allPost = (data, autor) => {
   const secOldComments = viewpostpublish.querySelector('.old-comments');
   getComments(data.id, (arrayComm) => {
     secOldComments.innerHTML = '';
+    console.log('getComments');
+    console.log(arrayComm);
     arrayComm.forEach((element) => {
       const artElement = document.createElement('article');
       artElement.classList.add('comment-main');
       artElement.innerHTML = `
-        <img class="circulo-min" src=${element.commUserPhoto} alt="">
-        <div class="comment-data bg">
-          <div>
-            <h4 class="comment-name">${element.commUserName}</h4>
-            <span class="comment-date">${showDate(element.commDate)}</span>
-            <p id="txtNewComm-${element.commDocId}">${element.commText}</p>
-            <a id="btn-update-${element.commDocId}" class="hide"><i class="far fa-save"></i></a>
-            <a id="btn-cancel-comm-${element.commDocId}" class="hide"><i class="fas fa-times"></i></a>
-            </div>
-        </div>
+      <img class="circulo-min" src=${element.commUserPhoto} alt="">
+      <div class="comment-data bg">
         <div>
-          <img class="i-mnu-options hide" src="img/more-horizontal.svg">
-        </div>
-        <div class="tooltip-container hide">
-          <div class="tooltip">
-            <div class="opt" id="btn-edit-comm-${element.commDocId}"> <i class="fas fa-edit icon-tool"></i> Editar</div>
-            <div class="opt" id="btn-del-comm-${element.commDocId}"> <i class="fas fa-trash-alt icon-tool"></i> Eliminar</div>
+          <h4 class="comment-name">${element.commUserName}</h4>
+          <span class="comment-date">${showDate(element.commDate)}</span>
+          <p id="txtNewComm-${element.commDocId}">${element.commText}</p>
+          <a id="btn-update-${element.commDocId}" class="hide"><i class="far fa-save"></i></a>
+          <a id="btn-cancel-comm-${element.commDocId}" class="hide"><i class="fas fa-times"></i></a>
           </div>
-        <div>
-      `;
+      </div>
+      <div>
+        <img class="i-mnu-options hide" src="img/more-horizontal.svg">
+      </div>
+      <div class="tooltip-container hide">
+        <div class="tooltip">
+          <div class="opt" id="btn-edit-comm-${element.commDocId}"> <i class="fas fa-edit icon-tool"></i> Editar</div>
+          <div class="opt" id="btn-del-comm-${element.commDocId}"> <i class="fas fa-trash-alt icon-tool"></i> Eliminar</div>
+        </div>
+      <div>
+    `;
       // comentarios: mostrar menu editar y eliminar
       const mnuOptions = artElement.querySelector('.i-mnu-options');
       if (userActual.uid === data.userId) {

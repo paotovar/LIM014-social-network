@@ -1,15 +1,26 @@
-// actualizar datos del usuario logueado por gmail
+// actualizar datos del usuario loguedado por gmail y facebook
 export const updateUser = (idDoc, newUserName, newUserPhoto, newInfoUser) => firebase.firestore().collection('users').doc(idDoc).update({
   displayName: newUserName,
   infoUser: newInfoUser,
   photoURL: newUserPhoto,
 });
 
-export const createUser = (idDoc, newUserName, newUserPhoto, newInfoUser) => firebase.firestore().collection('users').doc(idDoc).set({
-  displayName: newUserName,
-  infoUser: newInfoUser,
-  photoURL: newUserPhoto,
-});
+export const createUser = (idDoc, newUserName, newUserPhoto, newInfoUser) => {
+  const user = firebase.auth().currentUser;
+  user.updateProfile({
+    displayName: newUserName,
+    photoURL: newUserPhoto,
+  }).then(() => {
+    // Update successful.
+  }).catch(() => {
+    // An error happened.
+  });
+  return firebase.firestore().collection('users').doc(idDoc).set({
+    displayName: newUserName,
+    infoUser: newInfoUser,
+    photoURL: newUserPhoto,
+  });
+};
 
 export const updateInfoUser = (idDoc, newUserName, newInfoUser) => firebase.firestore().collection('users').doc(idDoc).update({
   displayName: newUserName,

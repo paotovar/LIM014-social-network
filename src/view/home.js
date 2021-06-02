@@ -8,9 +8,9 @@ import { createUser } from '../model/firebase_user.js';
 export default () => {
   const viewHome = `
   <img class="logo" src="img/logo.png">
-  <p id='texto'>¿Tu pasión es viajar?  
-  Comparte tus mejores momentos o los lugares a los cuales haz viajado,en esta comunidad compartimos los mejores momentos</p>
-  <img id="travel" src="img/travel.png">
+  <p id='texto'>¿Te gusta viajar,o conocer nuevos lugares?
+  Esta es la comunidad de viajeros,que comparten sus mejores momentos</p>
+  <img id="travel" src="img/travel.jpg">
   <p class='subtitle'>INICIA SESIÓN</p>
   <div><i class="far fa-user"></i><input class='allInputs 'id ="email" type="text" placeholder="Correo electronico"></div>
   <div><i class="fas fa-lock"></i><input class='allInputs 'id ="pass" type="password" placeholder="Contraseña"></div>
@@ -18,6 +18,7 @@ export default () => {
   <span id="messages" class="messages"></span>
   <p class='lil-text'>O ingresa con...</p>
   <div>
+  
   <a class='links-on-buttons'><img id="gmail" src="img/gmail.png"></a>
   </div>
   <p class='lil-text'>¿No tienes una cuenta?</p>
@@ -57,7 +58,7 @@ export default () => {
   btngoogleSignIn.addEventListener(('click'), () => {
     googleSignIn()
       .then((result) => {
-        createUser(result.user.uid, result.user.displayName, result.user.photoURL, 'Pasión por viajar')
+        createUser(result.user.uid, result.user.displayName, result.user.photoURL, 'Apasionados por viajar')
           .catch((error) => {
             console.log(error);
             console.log('No se actualizo usuario');
@@ -68,7 +69,7 @@ export default () => {
         console.log('Cuenta de Google registrada!!!');
       }).catch((error) => {
         console.log(error);
-        console.log('No se registro la cuenta :C');
+        console.log('No se registro la cuenta :c');
       });
   });
 
