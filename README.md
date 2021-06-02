@@ -110,7 +110,7 @@ Event objeto, delegación de eventos)
 
 * [✔] [Firestore.](https://firebase.google.com/docs/firestore)
 * [✔] [Firebase Auth.](https://firebase.google.com/docs/auth/web/start)
-* [ ] [Firebase security rules.](https://firebase.google.com/docs/rules)
+* [-] [Firebase security rules.](https://firebase.google.com/docs/rules)
 * [✔] Observadores. ([onAuthStateChanged](https://firebase.google.com/docs/auth/web/manage-users?hl=es#get_the_currently_signed-in_user)
  | [onSnapshot](https://firebase.google.com/docs/firestore/query-data/listen#listen_to_multiple_documents_in_a_collection))
 
