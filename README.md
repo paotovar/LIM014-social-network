@@ -24,8 +24,7 @@ Para ello usamos Firebase, el MVC(Modelo-Vista-Controlador), modularización, CS
 
 
 ## Prototipos Finales:
-
-✔ Versión Mobile<br>
+✔ Versión Mobile<br><br>
 ![finalMobile1](./src/screens/finalMobile1.png)<br>
 
 ![finalMobile2](./src/screens/finalMobile2.png)<br>
