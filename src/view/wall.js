@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { getUser, updateInfoUser } from '../model/firebase_user.js';
 
 import { allPost } from './postpublish.js';

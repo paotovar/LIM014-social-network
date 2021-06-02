@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   addComment, getComments, updateComment, deleteComment,
 } from '../model/firebase_comments.js';
@@ -174,6 +175,7 @@ export const allPost = (data, autor) => {
     const NewComm = viewpostpublish.querySelector(`#txtNewComm-${data.id}`).value;
     if (NewComm) {
       addComment(NewComm, userActual.displayName, userActual.photoURL, data.id)
+        // eslint-disable-next-line no-console
         .then((res) => console.log(res));
     }
     viewpostpublish.querySelector(`#txtNewComm-${data.id}`).value = '';
