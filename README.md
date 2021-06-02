@@ -3,7 +3,7 @@
 
  ¿Te encanta viajar? ¡Esta es tu comunidad! 
 
-MOCHILEROS  es una red social que te anima a viajar, compartimos las imágenes de los diferentes viajes realizados por nuestros participantes,ellos nos brindan los mejores tips  y nos brindan sus experiencias,también los lugares que le desean conocer.
+MOCHILEROS  es una red social que te anima a viajar, compartimos las imágenes de los diferentes viajes realizados por nuestros participantes también los lugares que desearían conocer, nos brindan los mejores tips  y sus grandiosas experiencias.
 
 
 ## RESUMEN DEL PROYECTO
