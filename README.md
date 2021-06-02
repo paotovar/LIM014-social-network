@@ -12,30 +12,31 @@ MOCHILEROS  es una Red Social, Single-Page Application (SPA), responsive en la q
 Para ello usamos Firebase, el MVC(Modelo-Vista-Controlador), modularización, CSS, JS y HTML.
 
 ## Prototipos de Alta Fidelidad:
-✔ Versión Mobile
+✔ Versión Mobile<br>
 
-![figmaMobile1](./src/screens/figmaMobile1.png)
-![figmaMobile2](./src/screens/figmaMobile2.png)
+![figmaMobile1](./src/screens/figmaMobile1.png)<br>
+![figmaMobile2](./src/screens/figmaMobile2.png)<br>
 
-  ✔ Versión Desktop
+  ✔ Versión Desktop<br>
 
-![figmaDesktop1](./src/screens/figmaDesktop1.png)
-![figmaDesktop2](./src/screens/figmaDesktop2.png)
+![figmaDesktop1](./src/screens/figmaDesktop1.png)<br>
+![figmaDesktop2](./src/screens/figmaDesktop2.png)<br>
 
 
-## Prototipos Finales:
-✔ Versión Mobile
-![finalMobile1](./src/screens/finalMobile1.png)
+## Prototipos Finales:<br>
+✔ Versión Mobile<br>
+![finalMobile1](./src/screens/finalMobile1.png)<br>
 
-![finalMobile2](./src/screens/finalMobile2.png)
+![finalMobile2](./src/screens/finalMobile2.png)<br>
 
-✔ Versión Desktop
-![finalDesktop1](./src/screens/finalDesktop1.png)
-![finalDesktop2](./src/screens/finalDesktop2.png)
-![finalDesktop3](./src/screens/finalDesktop3.png)
+✔ Versión Desktop<br>
+![finalDesktop1](./src/screens/finalDesktop1.png)<br>
+![finalDesktop2](./src/screens/finalDesktop2.png)<br>
+![finalDesktop3](./src/screens/finalDesktop3.png)<br>
 
 
 ## Funcionalidad
+
 Nuestros usuarios de MOCHILEROS deben realizar las siguientes acciones:
 
 Crear una cuenta con un correo electrónico válido y una contraseña. Al crear su cuenta, recibirá un mensaje de confirmación en el correo que haya ingresado para iniciar sesión.
