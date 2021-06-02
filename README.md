@@ -59,7 +59,7 @@ Tiene la opción de EDITAR y ELIMINAR.</br>
 * [✔] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
 * [✔] Uso de selectores de CSS.
 * [✔] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-* [] [Uso de CSS Grid Layout](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [-] [Uso de CSS Grid Layout](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
 
 ### DOM y Web APIs
@@ -78,7 +78,7 @@ Event objeto, delegación de eventos)
 
 * [✔] Uso de condicionales (if-else | switch | operador ternario)
 * [✔] Uso de funciones (parámetros | argumentos | valor de retorno)
-* [ ] Manipular arrays (filter | map | sort | reduce)
+* [-] Manipular arrays (filter | map | sort | reduce)
 * [✔] Manipular objects (key | value)
 * [✔] Uso ES modules ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 | [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
