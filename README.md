@@ -23,7 +23,8 @@ Para ello usamos Firebase, el MVC(Modelo-Vista-Controlador), modularización, CS
 ![figmaDesktop2](./src/screens/figmaDesktop2.png)<br>
 
 
-## Prototipos Finales:<br>
+## Prototipos Finales:
+
 ✔ Versión Mobile<br>
 ![finalMobile1](./src/screens/finalMobile1.png)<br>
 
