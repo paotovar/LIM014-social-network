@@ -10,10 +10,6 @@ export const createUser = (idDoc, newUserName, newUserPhoto, newInfoUser) => {
   user.updateProfile({
     displayName: newUserName,
     photoURL: newUserPhoto,
-  }).then(() => {
-    // Update successful.
-  }).catch(() => {
-    // An error happened.
   });
   return firebase.firestore().collection('users').doc(idDoc).set({
     displayName: newUserName,

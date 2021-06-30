@@ -7,7 +7,6 @@
     "javascript",
     "firebase",
     "jest"
-    
   ],
   "license": "MIT",
   "scripts": {
@@ -18,7 +17,6 @@
     "test": "jest --coverage",
     "start": "serve src/",
     "deploy": "gh-pages -d src"
-    
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -40,6 +38,7 @@
   },
   "dependencies": {
     "firebase-mock": "^2.3.2",
+    "gh-pages": "^3.2.0",
     "mock-cloud-firestore": "^0.12.0"
   }
 }
